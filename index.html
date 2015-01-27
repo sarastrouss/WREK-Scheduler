@@ -17,8 +17,8 @@
   </head>
    <style type="text/css">
       body {
-        padding-right: 40px; 
-        padding-left: 40px; 
+        padding-left: 2%;
+        padding-right:2%;
       }
     </style>
 
@@ -26,73 +26,80 @@
 
 
   <h1 class="page-header">The Scheduler</h1>
+  <div id="shows">
+    <!-- Search Bar -->
+    <div class="col-lg-6">
+      <div class="input-group" style="width:1000px;">
+        <input type="text" style="width:200px;" class="search form-control" placeholder="Search for..."/>
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">Go!</button>
+        </span>
 
-  <!-- Search Bar -->
-  <div class="col-lg-6">
-    <div class="input-group">
-      <input type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
-      </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div><!-- /.row -->
+        <!-- Buttons -->
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" onclick="userList.filter()">All</button>
+          </div>
+          
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" onclick="filter('Specialty')">Specialty Shows</button>
+          </div>
+          
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default" onclick= "filter('Pop Up')">Pop Up Shows</button>
+          </div>
+          
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-default"  onclick= "filter('Block')">Blocks</button>
+          </div>
+        
+        </div>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
 
 
-  <!--Buttons -->
-    <div class="btn-group" data-toggle="buttons">
-      <label class="btn btn-primary active">
-        <input type="checkbox" autocomplete="off" checked> All
-      </label>
-      <label class="btn btn-primary">
-        <input type="checkbox" autocomplete="off"> Pop Up Show
-      </label>
-      <label class="btn btn-primary">
-        <input type="checkbox" autocomplete="off"> Block
-      </label>
-      <label class="btn btn-primary">
-        <input type="checkbox" autocomplete="off"> Specialty Show
-      </label>
+
+      
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Show Name</th>
+              <th>Type</th>
+              <th>Code</th>
+            </tr>
+          </thead>
+          <tbody class="list">
+            <tr>
+              <td class="name">Live at WREK</td>
+              <td class="showtype">Specialty</td>
+              <td class="code">LAW</td>
+            </tr>
+            <tr>
+              <td class="name">Atmospherics</td>
+              <td class="showtype">Block</td>
+              <td class="code">ATM</td>
+            </tr>
+            <tr>
+              <td class="name">Personality Crisis</td>
+              <td class="showtype">Specialty</td>
+              <td class="code">PC</td>
+            </tr>
+            <tr>
+              <td class="name">Kudzoo Jungle</td>
+              <td class="showtype">Pop Up</td>
+              <td class="code">KJ</td>
+            </tr>
+            <tr>
+              <td class="name">Radiobomb</td>
+              <td class="showtype">Specialty</td>
+              <td class="code">RB</td>
+          </tbody>
+        </table>
+      </div>
     </div>
-
-  <h2 class="sub-header">Shows</h2>
-
-  
-
-  <div class="table-responsive">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>Show Name</th>
-          <th>Type</th>
-          <th>Code</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Live at WREK</td>
-          <td>specialty</td>
-          <td>LAW</td>
-        </tr>
-        <tr>
-          <td>Atmospherics</td>
-          <td>block</td>
-          <td>ATM</td>
-        </tr>
-        <tr>
-          <td>Personality Crisis</td>
-          <td>specialty</td>
-          <td>PC</td>
-        </tr>
-        <tr>
-          <td>Radiobomb</td>
-          <td>specialty</td>
-          <td>RB</td>
-      </tbody>
-    </table>
-  </div>
-</div>
-</div>
+    </div>
+    </div>
 </div>
 
     <!-- Bootstrap core JavaScript
@@ -100,5 +107,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="list.min.js"></script>
+    <script src="search.js"></script>
   </body>
 </html>
