@@ -65,6 +65,7 @@
           <thead>
             <tr>
               <th>Show Name</th>
+              <th>Listeners</th>
               <th>Type</th>
               <th>Code</th>
             </tr>
@@ -72,26 +73,31 @@
           <tbody class="list">
             <tr>
               <td class="name"><a href="liveatwrek.html">Live at WREK</a></td>
+              <td class="spark"></td>
               <td class="showtype">Specialty</td>
               <td class="code">LAW</td>
             </tr>
             <tr>
-              <td class="name"><a href="liveatwrek.html">Atmospherics</a></td>
+              <td class="name">Atmospherics</td>
+              <td class="spark"></td>
               <td class="showtype">Block</td>
               <td class="code">ATM</td>
             </tr>
             <tr>
-              <td class="name"><a href="liveatwrek.html">Personality Crisis</a></td>
+              <td class="name">Personality Crisis</td>
+              <td class="spark"></td>
               <td class="showtype">Specialty</td>
               <td class="code">PC</td>
             </tr>
             <tr>
-              <td class="name"><a href="liveatwrek.html">Kudzoo Jungle</a></td>
+              <td class="name">Kudzoo Jungle</td>
+              <td class="spark"></td>
               <td class="showtype">Pop Up</td>
               <td class="code">KJ</td>
             </tr>
             <tr>
-              <td class="name"><a href="liveatwrek.html">Radiobomb</a></td>
+              <td class="name">Radiobomb</td>
+              <td class="spark"></td>
               <td class="showtype">Specialty</td>
               <td class="code">RB</td>
           </tbody>
@@ -107,7 +113,23 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="list.min.js"></script>
-    <script src="search.js"></script>
+    <script src="js/list.min.js"></script>
+    <script src="js/search.js"></script>
+    <script src="js/jquery.sparkline.min.js"></script>
+    <script type="text/javascript">
+      function generateLine(){
+        var arr = []
+        while(arr.length < 30){
+          var randomnumber=Math.ceil(Math.random()*100)
+          var found=false;
+          for(var i=0;i<arr.length;i++){
+            if(arr[i]==randomnumber){found=true;break}
+          }
+          if(!found)arr[arr.length]=randomnumber;
+        }
+        return arr;
+      }
+      $(".spark").sparkline(generateLine(), {type: 'line'});
+    </script>
   </body>
 </html>
